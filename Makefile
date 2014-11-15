@@ -367,10 +367,7 @@ KBUILD_CFLAGS   := -Wall -Wundef -Wstrict-prototypes -Wno-trigraphs \
 		   -fno-strict-aliasing -fno-common \
 		   -Werror-implicit-function-declaration \
 		   -Wno-format-security \
-		   -fno-delete-null-pointer-checks \
-		   -marm -march=armv7-a \
-		   -mcpu=cortex-a9 -mfpu=neon -mtune=cortex-a9 -fno-pic \
-		   -munaligned-access
+		   -fno-delete-null-pointer-checks
 KBUILD_AFLAGS_KERNEL :=
 KBUILD_CFLAGS_KERNEL :=
 KBUILD_AFLAGS   := -D__ASSEMBLY__
@@ -568,10 +565,7 @@ endif
 
 ifdef CONFIG_CC_CHECK_WARNING_STRICTLY
 KBUILD_CFLAGS	+= -fdiagnostics-show-option -Werror \
-		   -Wno-error=unused-function \
-		   -Wno-error=unused-variable \
-		   -Wno-error=unused-value \
-		   -Wno-error=unused-label
+		   -Wno-unused
 endif
 
 include $(srctree)/arch/$(SRCARCH)/Makefile
