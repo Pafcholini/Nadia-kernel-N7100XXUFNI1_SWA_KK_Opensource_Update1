@@ -1742,7 +1742,7 @@ static int i2c_touchkey_probe(struct i2c_client *client,
 	set_bit(LED_MISC, input_dev->ledbit);
 	set_bit(EV_KEY, input_dev->evbit);
 
-	atomic_set(&tkey_i2c->keypad_enable, 1);
+	atomic_set(&tkey_i2c->keypad_enable, 0);
 
 	for (i = 1; i < touchkey_count; i++)
 		set_bit(touchkey_keycode[i], input_dev->keybit);
